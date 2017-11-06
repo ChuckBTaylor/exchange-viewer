@@ -12,7 +12,7 @@ class App extends Component{
       <div className="App">
           <NavBar />
           <Route path='/' component={SearchBar} />
-          <Route path='/about' component={AboutPage} />
+          <Route path='/about' component={AboutPage} /> 
           <Route path='/currency/:currencyCode' render={({ match }) => {
           return (
             <CurrencyContainer match={ match }/>

@@ -18,7 +18,7 @@ class SearchBar extends Component{
 
   handleSubmit = (ev) => {
     ev.preventDefault()
-    this.props.history.push(`/currency/${this.state.input}`)
+    this.props.history.push(`/currency/${this.state.input.toUpperCase()}`)
     this.setState({input: ""})
   }
 
