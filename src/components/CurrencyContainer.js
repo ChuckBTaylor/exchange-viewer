@@ -33,7 +33,7 @@ class CurrencyContainer extends Component{
   }
 
   setNewCurrencyInfo(){
-    const code = this.props.match.url.slice(1)
+    const code = this.props.match.params.currencyCode
     fetchCurrencies(code)
     .then(json => {
       const newInfo = {currencyInfo: Object.entries(json.rates), base: code}

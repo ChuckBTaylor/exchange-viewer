@@ -17,7 +17,7 @@ class Currency extends Component{
   render(){
     return(
       <li>
-        <Link to={`/${this.props.info[0]}`} data-tip={shortToLong[this.props.info[0]]}><ReactTooltip />{this.props.info[0]}</Link> : {Math.round((this.props.info[1] * this.props.amount)*1000)/1000}
+        <Link to={`/currency/${this.props.info[0]}`} data-tip={shortToLong[this.props.info[0]]}><ReactTooltip />{this.props.info[0]}</Link> : {Math.round((this.props.info[1] * this.props.amount)*1000)/1000}
       </li>
     )
   }
