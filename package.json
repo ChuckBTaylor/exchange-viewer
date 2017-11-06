@@ -1,0 +1,28 @@
+{
+  "name": "exchange_machine",
+  "version": "0.1.0",
+  "description": "See money exchange rates",
+  "main": "index.js",
+  "repository": "https://github.com/ChuckBTaylor/exchange-viewer.git",
+  "author": "WillyS",
+  "license": "N/A",
+  "private": null,
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "history": "^4.7.2",
+    "jquery": "^3.2.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-hoverbox": "^1.0.542",
+    "react-router-dom": "^4.2.2",
+    "react-tooltip": "^3.4.0"
+  },
+  "devDependencies": {
+    "jsdom": "^11.3.0",
+    "react-scripts": "^1.0.17"
+  },
+  "scripts": {
+    "start": "react-scripts start"
+  }
+}
