@@ -10,7 +10,7 @@ class CurrencyContainer extends Component{
     super(props)
     this.state = {
       currencyInfo: [],
-      base: "USD",
+      base: ``,
       amount: 1
     }
   }
@@ -36,18 +36,36 @@ class CurrencyContainer extends Component{
     const code = this.props.match.params.currencyCode
     fetchCurrencies(code)
     .then(json => {
-      const newInfo = {currencyInfo: Object.entries(json.rates), base: code}
+      const newInfo = {currencyInfo: Object.entries(json.rates), base: this.props.match.params.currencyCode}
       this.setState(newInfo)
     })
   }
 
+  // componentWillReceiveProps(nextProps){
+  //   console.log("willReceiveProps\nnextProps", nextProps, "\nthis", this);
+  // }
+
   componentDidMount(){
     this.setNewCurrencyInfo()
+    }
+
+  shouldComponentUpdate(nextProps, nextState){
+  // console.log("shouldComponentUpdate\nthis.props", this.props, "\nthis.state", this.state);
+  // console.log("shouldComponentUpdate\nnextProps", nextProps, "\nnextState", nextState);
+  // console.log("shouldComponentUpdate\n", this.state.base !== nextProps.match.params.currencyCode );
+  return this.state.base !== nextProps.match.params.currencyCode
   }
 
   componentDidUpdate(){
+    // console.log("Component Did Update called");
     this.setNewCurrencyInfo()
   }
+
+  // componentWillUpdate(){
+  //   console.log("Component Will Update called");
+  //   this.setNewCurrencyInfo()
+  // }
+
 }
 
 CurrencyContainer.propTypes = {

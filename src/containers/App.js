@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router';
+import { Switch, Route } from 'react-router';
 import NavBar from '../components/NavBar';
 import SearchBar from '../components/SearchBar';
 import CurrencyContainer from '../components/CurrencyContainer';
 import AboutPage from '../components/AboutPage';
+// import WordPage from '../components/WordPage';
 
 class App extends Component{
 
@@ -12,7 +13,10 @@ class App extends Component{
       <div className="App">
           <NavBar />
           <Route path='/' component={SearchBar} />
-          <Route path='/about' component={AboutPage} /> 
+          <Switch>
+            <Route path='/about' component={AboutPage} />
+
+          </Switch>
           <Route path='/currency/:currencyCode' render={({ match }) => {
           return (
             <CurrencyContainer match={ match }/>
